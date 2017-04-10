@@ -26,6 +26,7 @@ public class FiboGenController {
 		try{
 			int limit = task.getTask();
             
+			//http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
             long[] series = new long[limit];
            
             //create first 2 series elements
@@ -44,6 +45,7 @@ public class FiboGenController {
 			
 			
 		}catch (NumberFormatException ex){
+			System.out.println(ex);
 		}
 		
 		return "{\"result\" : \""+ sb.toString() + "\"}";

@@ -16,6 +16,4 @@ public class TaskTO implements Serializable{
 	public void setTask(int task) {
 		this.task = task;
 	}
-	
-	
 }
