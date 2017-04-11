@@ -11,6 +11,7 @@ import br.com.demo.to.TaskTO;
 
 @RestController
 public class FiboGenController {
+	//private static int FOO = 2;
 
 	@RequestMapping(value = "/status", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<String> status(){
