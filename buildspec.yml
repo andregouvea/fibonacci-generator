@@ -15,6 +15,5 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-artifacts:
-  files:
-    - target/FibonacciGen-0.0.1.jar
+      - aws s3 cp target/FibonnaciGen-0.0.1.jar s3://continuous-delivery-demo/deploy/FibonacciGen-0.0.1.jar
+
