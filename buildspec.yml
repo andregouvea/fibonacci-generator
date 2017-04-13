@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - echo Nothing to do in the install phase...
+      - aws s3 ls
   pre_build:
     commands:
       - echo Running Code Quality Task PMD
@@ -15,5 +16,5 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - aws s3 cp target/FibonnaciGen-0.0.1.jar s3://continuous-delivery-demo/deploy/FibonacciGen-0.0.1.jar
+      - aws s3 cp target/FibonacciGen-0.0.1.jar s3://continuous-delivery-demo/deploy/FibonacciGen-0.0.1.jar
 
