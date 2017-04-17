@@ -1,5 +1,8 @@
 package br.com.demo.controller;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,15 +31,15 @@ public class FiboGenController {
 			int limit = task.getTask();
             
 			//http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
-            long[] series = new long[limit];
+            BigInteger[] series = new BigInteger[limit];
            
             //create first 2 series elements
-            series[0] = 1;
-            series[1] = 2;
+            series[0] = BigInteger.valueOf(1L);
+            series[1] = BigInteger.valueOf(2L);
            
             //create the Fibonacci series and store it in an array
             for(int i=2; i < limit; i++){
-                    series[i] = series[i-1] + series[i-2];
+                    series[i] = series[i-1].add(series[i-2]);
             }
            
             
