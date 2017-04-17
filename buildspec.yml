@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Running Code Quality Task PMD
-      - mvn pmd:check
+      
   build:
     commands:
       - echo Build started on `date`
