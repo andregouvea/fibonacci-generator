@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.demo.to.DataTO;
 import br.com.demo.to.TaskTO;
 
 @RestController
@@ -21,18 +22,9 @@ public class FiboGenController {
 	
 	
 	@RequestMapping(value = "/task",  method = RequestMethod.POST)
-	public String task(@RequestBody TaskTO task){
-		StringBuilder sb = new StringBuilder();
-		
+	public DataTO task(@RequestBody TaskTO task){
 		String email = task.getTask();
-		
-		//Register no DynamoDB
-		sb.append("email:" + email);
-		
-		
-			
-		
-		return "{\"result\" : \""+ sb.toString() + "\"}";
+		return DynamoHelper.SetEmail(email);
 	}
 	
 }
