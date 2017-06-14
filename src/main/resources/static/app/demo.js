@@ -10,7 +10,8 @@ app.controller('TaskCtrl', function($scope, $http){
         }
         
         $http.post("/task", data).then(function(response, status) {
-            $scope.result = response.data;
+        	console.log(response.data);
+            $scope.obj = response.data;
         }, function errorCallback(response) {
         	console.log(response);
         })

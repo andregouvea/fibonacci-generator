@@ -56,13 +56,21 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div ng-controller="TaskCtrl">
+                  
                   <form ng-submit="sendPost()">
                     <label>Email</label>
                     <input min="50" ng-model="task"/>
                     <button type="submit">Register</button>
                   </form>
                   <br/>
-				  Infos: {{result.result}}	                  
+				  URL: {{obj.url}}
+				  <br/>
+				  RDP: <a ng-href="{{obj.rdp}}">{{obj.rdp}}</a>
+				  <br/>
+				  User: {{obj.user}} 
+				  <br/>
+				  Password: {{obj.passwd}}  
+				                  
                 </div>  
                 
                 
