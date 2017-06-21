@@ -48,6 +48,8 @@ public class DynamoHelper {
 				to.setRdp("https://s3.amazonaws.com/escape-room-rdp/" +item.get("desktopName").getS() + ".rdp");
 				to.setPasswd(item.get("passwd").getS());
 				to.setUrl(item.get("record").getS());
+				to.setAccountId("https://"+item.get("accountId").getS()+".signin.aws.amazon.com/console");
+				to.setAccountPasswd("Escaperoom2017!");
 				return to;
 		    } else {
 		    	System.out.println("tem email...");

@@ -8,16 +8,19 @@ public class DataTO {
 	private String rdp;
 	private String user;
 	private String passwd;
+	private String accountId;
+	private String accountPasswd;
 	
-	
-	public DataTO(String url, String rdp, String user, String passwd) {
+	public DataTO(String url, String rdp, String user, String passwd, String accountId, String accountPasswd) {
 		super();
 		this.url = url;
 		this.rdp = rdp;
 		this.user = user;
 		this.passwd = passwd;
+		this.accountId = accountId;
+		this.accountPasswd = accountPasswd;
 	}
-	
+
 	public DataTO(){}
 
 	public String getUrl() {
@@ -52,9 +55,26 @@ public class DataTO {
 		this.passwd = passwd;
 	}
 
+	public String getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
+	}
+
+	public String getAccountPasswd() {
+		return accountPasswd;
+	}
+
+	public void setAccountPasswd(String accountPasswd) {
+		this.accountPasswd = accountPasswd;
+	}
+
 	@Override
 	public String toString() {
 		return "DataTO [getUrl()=" + getUrl() + ", getRdp()=" + getRdp() + ", getUser()=" + getUser() + ", getPasswd()="
-				+ getPasswd() + "]";
+				+ getPasswd() + ", getAccountId()=" + getAccountId() + ", getAccountPasswd()=" + getAccountPasswd()
+				+ "]";
 	}
 }

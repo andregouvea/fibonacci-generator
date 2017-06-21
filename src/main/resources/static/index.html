@@ -3,28 +3,28 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>Demo</title>
+<title>Demo</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <style>
-    body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    }
-    </style>
+<!-- Custom CSS -->
+<style>
+body {
+	padding-top: 70px;
+	/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+</style>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -33,65 +33,96 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Escape Room Register</a>
-            </div>
-        </div>
-        <!-- /.container -->
-    </nav>
+	<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Escape Room Register</a>
+			</div>
+		</div>
+		<!-- /.container -->
+	</nav>
 
-    <!-- Page Content -->
-    <div class="container">
+	<!-- Page Content -->
+	<div class="container">
 
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div ng-controller="TaskCtrl">
-                  
-                  <form ng-submit="sendPost()">
-                    <label>Email</label>
-                    <input min="50" ng-model="task"/>
-                    <button type="submit">Register</button>
-                  </form>
-                  <br/>
-				  URL: {{obj.url}}
-				  <br/>
-				  RDP: <a ng-href="{{obj.rdp}}">{{obj.rdp}}</a>
-				  <br/>
-				  User: {{obj.user}} 
-				  <br/>
-				  Password: {{obj.passwd}}  
-				                  
-                </div>  
-                
-                
-            </div>
-        </div>
-        <!-- /.row -->
+		<div class="row">
+			<div class="col-lg-12">
+				<div ng-controller="TaskCtrl">
 
-    </div>
-    <!-- /.container -->
+					<form ng-submit="sendPost()">
+						<label>Name</label> <input min="50" ng-model="task" />
+						<button type="submit">Register</button>
+					</form>
+					<br /> 
+					<span ng-if="obj">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Game Desktop</h3>
+							</div>
+							<div class="panel-body">
+								URL: {{obj.url}}
+								<br/>
+								RDP: <a ng-href="{{obj.rdp}}">{{obj.rdp}}</a>
+								<br/>
+								User: {{obj.user}}
+								<br/>
+								Password: {{obj.passwd}}
+							</div>
+						</div> 
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">AWS Account</h3>
+							</div>
+							<div class="panel-body">
+								Account: <a ng-href="{{obj.accountId}}">{{obj.accountId}}</a>
+								<br/>
+								User: escaperoomuser
+								<br/>
+								Password: {{obj.accountPasswd}}
+							</div>
+						</div>
+					</span>
+					<span ng-if="msg">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Message</h3>
+							</div>
+							<div class="panel-body">
+								{{msg}}
+							</div>
+						</div>
+					</span>
+					
+					
+				</div>
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    
-    <!-- Angular 1.6 -->
-    <script src="lib/angular.min.js"></script>
-    
-    <!-- App code -->
-    <script src="app/demo.js"></script>
+			</div>
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container -->
+
+	<!-- jQuery Version 1.11.1 -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Angular 1.6 -->
+	<script src="lib/angular.min.js"></script>
+
+	<!-- App code -->
+	<script src="app/demo.js"></script>
 
 </body>
 
