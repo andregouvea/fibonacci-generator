@@ -11,12 +11,14 @@ app.controller('StatusCtrl', function($scope, $http) {
 });
 
 app.controller('InstanceIdCtrl', function($scope, $http) {
+	$scope.instanceid = "";
+	
 	$http.get("/instanceid").
         then(function(response) {
         	console.log(response);
             $scope.instanceid = response.data;
         }, function errorCallback(response) {
-        	console.log(response);
+        	console.log( " error " + response);
         });
 });
 

@@ -27,7 +27,7 @@ public class FiboGenController {
 	}
 	
 	@RequestMapping(value = "/instanceid", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<String> instanceId(){
+	public String instanceId(){
 		try{
 			
 			StringBuilder result = new StringBuilder();
@@ -42,12 +42,15 @@ public class FiboGenController {
 			}
 			rd.close();
 
-			return new ResponseEntity<String>(new Date().toString() + " ID do servidor: " + result.toString(), HttpStatus.OK);
+			StringBuilder sb = new StringBuilder();
+			sb.append(new Date().toString() + " ID do servidor: " + result.toString());
+			
+			return "{\"result\" : \""+ sb.toString() + "\"}";
 			
 		}catch (Exception ex){
 		}
 		
-		return new ResponseEntity<String>("Localhost", HttpStatus.OK);
+		return "{\"result\" : \"localhost\"}";
 	}
 	
 	
