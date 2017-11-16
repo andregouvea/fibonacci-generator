@@ -26,7 +26,7 @@ public class FiboGenController {
 		
 	}
 	
-	@RequestMapping(value = "/status", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/instanceid", method = RequestMethod.GET, produces = "application/json")
 	public ResponseEntity<String> instanceId(){
 		try{
 			

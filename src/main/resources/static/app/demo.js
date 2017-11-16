@@ -10,6 +10,16 @@ app.controller('StatusCtrl', function($scope, $http) {
         });
 });
 
+app.controller('InstanceIdCtrl', function($scope, $http) {
+	$http.get("/instanceid").
+        then(function(response) {
+        	console.log(response);
+            $scope.instanceid = response.data;
+        }, function errorCallback(response) {
+        	console.log(response);
+        });
+});
+
 app.controller('TaskCtrl', function($scope, $http){
 	$scope.result = "";
 	$scope.task = "";
